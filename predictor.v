@@ -6,7 +6,6 @@ module predictor(input wire request, result, clk, taken, output reg prediction);
 	reg [1:0] state = 3;
 	
 	reg waitingforreq = 1;
-	//reg waitingforres = 0;
 	
 	
 	
@@ -25,13 +24,17 @@ module predictor(input wire request, result, clk, taken, output reg prediction);
 			if (taken)
 			begin
 				if(state != 3)
+				begin
 					state = state + 1;
+				end
 				
 			end
 			else
 			begin
 				if(state)
+				begin
 					state = state - 1;
+				end
 			end
 			
 			waitingforreq = 1;
