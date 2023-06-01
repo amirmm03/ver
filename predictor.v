@@ -3,9 +3,9 @@ module predictor(input wire request, result, clk, taken, output reg prediction);
 
 
 // result 1 next they say is taken or not reALLY
-	reg [1:0] state = 0;
+	reg [1:0] state = 3;
 	
-	reg waitingforreq = 0;
+	reg waitingforreq = 1;
 	//reg waitingforres = 0;
 	
 	
